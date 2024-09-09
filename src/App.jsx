@@ -1,15 +1,20 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import Header from './components/Header'
+import HomePage from './pages/Home'
+import GroupStage from './pages/GroupStage'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <h1> Euro 2024</h1>
-     
+    < Header />
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/group-stage' element={<GroupStage />} />
+      </Routes>
     </>
   )
 }
