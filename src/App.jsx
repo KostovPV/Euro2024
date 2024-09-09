@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import Header from './components/Header'
 import HomePage from './pages/Home'
 import GroupStage from './pages/GroupStage'
+import GameDetails from './components/GameDetails'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/group-stage' element={<GroupStage />} />
+        <Route path='/games/:matchID/details' element={<GameDetails />} />
       </Routes>
     </>
   )

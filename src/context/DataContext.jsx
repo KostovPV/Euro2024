@@ -4,7 +4,7 @@ const DataContext = createContext();
 
 const DataProvider = ({ children }) => {
   const [data, setData] = useState({});
-
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async (fileName) => {
@@ -27,7 +27,7 @@ const DataProvider = ({ children }) => {
         const values = row.split(',').map(value => value.trim());
         let currentData = {};
         headers.forEach((header, index) => {
-            currentData[header] = values[index] || '';
+          currentData[header] = values[index] || '';
         });
         return currentData;
       });
@@ -36,18 +36,21 @@ const DataProvider = ({ children }) => {
       setData(prevData => ({ ...prevData, [fileName]: data }));
     };
 
-    // Fetch all csv files from the assets folder
+      // Fetch all csv files from the assets folder
     const loadData = async () => {
       await fetchData('teams.csv');
       await fetchData('players.csv');
       await fetchData('matches.csv');
       await fetchData('records.csv');
       
-    
+      
+      setLoading(false);
     };
 
     loadData();
   }, []);
+
+  if (loading) return <div>Loading...</div>;
 
   return (
     <DataContext.Provider value={data}>
@@ -56,4 +59,4 @@ const DataProvider = ({ children }) => {
   );
 };
 
-export { DataContext, DataProvider };
+export {DataContext, DataProvider };
