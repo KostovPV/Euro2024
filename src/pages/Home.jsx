@@ -1,29 +1,29 @@
-import { useContext } from "react";
-import { DataContext } from "../context/DataContext";
-import { Link, useNavigate } from "react-router-dom";
+
 
 const HomePage = () => {
+    
+    
 
-    const data = useContext(DataContext);
-    const records = data['records.csv'];
-    const players = data['players.csv'];
-    const teams = data['teams.csv'];
-    const matches = data['matches.csv'];
-    console.log(' records->', records);
-    console.log(' players->', players);
-    console.log(' matches->', matches);
-    console.log(' teams->', teams);
-    const navigate = useNavigate();
     return (
+        <div className="home-container">
+            <h2>Knockout Stage Games</h2>
 
-        <section className="home-page">
-            <button onClick={() => navigate('/group-stage')}>Check the group stage results</button>
-            <main>
-                <p>
-                    Content here!
-                </p>
-            </main>
-        </section>
+            <section className="knockout-stage round-of-16">
+                <h3>Round of 16</h3>
+                
+            </section>
+            <section className="knockout-stage quarter-finals">
+                <h3>Quarter-finals</h3>
+                
+            </section>
+            <section className="knockout-stage semi-finals">
+                <h3>Semi-finals</h3>
+                
+            </section>
+            <section className="knockout-stage final">
+        
+            </section>
+        </div>
     );
 };
 

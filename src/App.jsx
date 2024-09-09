@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/group-stage' element={<GroupStage />} />
-        <Route path='/games/:matchID/details' element={<GameDetails />} />
+        <Route path='/games/:ID/details' element={<GameDetails />} />
       </Routes>
     </>
   )
