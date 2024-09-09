@@ -4,12 +4,13 @@ import { groupTeamsByGroup, calculateStandings, getThirdPlaceTeams } from '../he
 import GroupStandings from "../components/GroupStanding";
 import ThirdPlaceBest from "../components/ThirdPlaceBest";
 import GroupMatches from "../components/GroupMatches";
+import { useNavigate } from "react-router-dom";
 
 const GroupStage = () => {
     const data = useContext(DataContext);
     const teams = data['teams.csv'];
     const matches = data['matches.csv'];
-
+    const navigate = useNavigate();
     if (!teams || !matches) {
         return <div>Loading data...</div>;
     }
@@ -34,6 +35,7 @@ const GroupStage = () => {
 
 
     return (
+        <>
         <div className="group-stage">
             {groupStandings.map(({ groupName, standings, groupTeams, groupMatches }, index) => (
                 <section key={index} className="group-stage-section">
@@ -43,6 +45,7 @@ const GroupStage = () => {
             ))}
             <ThirdPlaceBest allThirdPlaceTeams={allThirdPlaceTeams} />
         </div>
+        </>
     );
 };
 export default GroupStage;
