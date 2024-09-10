@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { DataContext } from '../context/DataContext';  
-import { getKnockoutStages } from '../helpers/EliminationStageData';  
+import { DataContext } from '../context/DataContext';
+import { getKnockoutStages } from '../helpers/EliminationStageData';
 import MatchItem from '../components/MatchItem';
 
 const HomePage = () => {
@@ -13,63 +13,82 @@ const HomePage = () => {
     const { final, semiFinals, quarterFinals, roundOf16 } = getKnockoutStages(matches);
 
     return (
-        <div className="home-container">
-            <h2>Knockout Stage Games</h2>
+        <div className="elimination-container">
+            <section className="direct-elimination-game">
 
-            <section className="knockout-stage round-of-16">
-                <h3>Round of 16</h3>
-                {roundOf16.map(match => {
-                    const teamA = teams.find(team => team.ID === match.ATeamID);
-                    const teamB = teams.find(team => team.ID === match.BTeamID);
-                    return (
-                        <MatchItem 
-                            key={match.ID} 
-                            match={match} 
-                            teamA={teamA} 
-                            teamB={teamB} 
-                        />
-                    );
-                })}
+                <div className="direct-elimination-game-container-round-of-16">
+                    <h3>Round of 16</h3>
+                    {roundOf16.map(match => {
+                        const teamA = teams.find(team => team.ID === match.ATeamID);
+                        const teamB = teams.find(team => team.ID === match.BTeamID);
+                        return (
+                            <div className="match-wrapper" key={match.ID}>
+                                <MatchItem
+                                    key={match.ID}
+                                    match={match}
+                                    teamA={teamA}
+                                    teamB={teamB}
+                                />
+                            </div>
+                        );
+                    })}
+                </div>
             </section>
-            <section className="knockout-stage quarter-finals">
-                <h3>Quarter-finals</h3>
-                {quarterFinals.map(match => {
-                    const teamA = teams.find(team => team.ID === match.ATeamID);
-                    const teamB = teams.find(team => team.ID === match.BTeamID);
-                    return (
-                        <MatchItem 
-                            key={match.ID} 
-                            match={match} 
-                            teamA={teamA} 
-                            teamB={teamB} 
-                        />
-                    );
-                })}
+            <section className="direct-elimination-game">
+
+
+                <div className="direct-elimination-game-container-quarter-finals">
+                    <h3>Quarter-finals</h3>
+                    {quarterFinals.map(match => {
+                        const teamA = teams.find(team => team.ID === match.ATeamID);
+                        const teamB = teams.find(team => team.ID === match.BTeamID);
+                        return (
+                            <div className="match-wrapper" key={match.ID}>
+                                <MatchItem
+                                    key={match.ID}
+                                    match={match}
+                                    teamA={teamA}
+                                    teamB={teamB}
+                                />
+                            </div>
+                        );
+                    })}
+                </div>
             </section>
-            <section className="knockout-stage semi-finals">
-                <h3>Semi-finals</h3>
-                {semiFinals.map(match => {
-                    const teamA = teams.find(team => team.ID === match.ATeamID);
-                    const teamB = teams.find(team => team.ID === match.BTeamID);
-                    return (
-                        <MatchItem 
-                            key={match.ID} 
-                            match={match} 
-                            teamA={teamA} 
-                            teamB={teamB} 
-                        />
-                    );
-                })}
+            <section className="direct-elimination-game">
+
+                <div className="direct-elimination-game-container-semi-finals">
+                    <h3>Semi-finals</h3>
+                    {semiFinals.map(match => {
+                        const teamA = teams.find(team => team.ID === match.ATeamID);
+                        const teamB = teams.find(team => team.ID === match.BTeamID);
+                        return (
+                            <div className="match-wrapper" key={match.ID}>
+                                <MatchItem
+                                    key={match.ID}
+                                    match={match}
+                                    teamA={teamA}
+                                    teamB={teamB}
+                                />
+                            </div>
+                        );
+                    })}
+                </div>
             </section>
-            <section className="knockout-stage final">
-                <h3>Final</h3>
-                {final && (
-                    <MatchItem 
-                        match={final} 
-                        teamA={teams.find(team => team.ID === final.ATeamID)} 
-                        teamB={teams.find(team => team.ID === final.BTeamID)} 
-                    />
-                )}
+            <section className="direct-elimination-game">
+
+                <div className="direct-elimination-game-container-final">
+                    <h3>Final</h3>
+                    {final && (
+                        <div className="match-wrapper" key={final.ID}>
+                            <MatchItem
+                                match={final}
+                                teamA={teams.find(team => team.ID === final.ATeamID)}
+                                teamB={teams.find(team => team.ID === final.BTeamID)}
+                            />
+                        </div>
+                    )}
+                </div>
             </section>
         </div>
     );
