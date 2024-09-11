@@ -5,7 +5,7 @@ Euro2024 is a project where a valid data from CSV files (4 files) has to be pars
 
 The App is organized in two main pages(Main and Group-Stage) pages. When exploring the pages Team formation and Team list are accessed in the  Game Details page and individual Players information is shown at Player Info page.
 
-Data is parced from the provided files and fed to the components with help of the context. To help organizing the data access and app structuring two hepler files are used for the elimination stage and the group stage of the chanpionship.
+Data is parsed from the provided files and fed to the components with help of the context. To help organizing the data access and app structuring two hepler files are used for the elimination stage and the group stage of the chanpionship.
 
 
 # Main Page
