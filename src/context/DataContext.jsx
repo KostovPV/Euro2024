@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
+import Loader from '../components/Loader';
 
 const DataContext = createContext();
 
@@ -11,7 +12,7 @@ const DataProvider = ({ children }) => {
       try {
         const response = await fetch(`/assets/data/${fileName}`);
         if (!response.ok) {
-          throw new Error('Something ent really wrong');
+          throw new Error('Something went really wrong');
         }
         const text = await response.text();
         parseCsvFile(fileName, text);
@@ -36,21 +37,21 @@ const DataProvider = ({ children }) => {
       setData(prevData => ({ ...prevData, [fileName]: data }));
     };
 
-      // Fetch all csv files from the assets folder
+    // Fetch all CSV files from the assets folder
     const loadData = async () => {
+      setLoading(true); 
       await fetchData('teams.csv');
       await fetchData('players.csv');
       await fetchData('matches.csv');
       await fetchData('records.csv');
-      
-      
-      setLoading(false);
+      setLoading(false); 
     };
 
     loadData();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  
+  if (loading) return <Loader />;
 
   return (
     <DataContext.Provider value={data}>
@@ -59,4 +60,4 @@ const DataProvider = ({ children }) => {
   );
 };
 
-export {DataContext, DataProvider };
+export { DataContext, DataProvider };
