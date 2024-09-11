@@ -18,11 +18,11 @@ const HomePage = () => {
 
                 <div className="direct-elimination-game-container-round-of-16">
                     <h3>Round of 16</h3>
-                    {roundOf16.map(match => {
+                    {roundOf16.map((match, index) => {
                         const teamA = teams.find(team => team.ID === match.ATeamID);
                         const teamB = teams.find(team => team.ID === match.BTeamID);
                         return (
-                            <div className="match-wrapper" key={match.ID}>
+                            <div className={`match-wrapper-16-${index+1}`} key={match.ID}>
                                 <MatchItem
                                     key={match.ID}
                                     match={match}
@@ -39,11 +39,11 @@ const HomePage = () => {
 
                 <div className="direct-elimination-game-container-quarter-finals">
                     <h3>Quarter-finals</h3>
-                    {quarterFinals.map(match => {
+                    {quarterFinals.map((match, index) => {
                         const teamA = teams.find(team => team.ID === match.ATeamID);
                         const teamB = teams.find(team => team.ID === match.BTeamID);
                         return (
-                            <div className="match-wrapper" key={match.ID}>
+                            <div className={`match-wrapper-${index+1}`} key={match.ID}>
                                 <MatchItem
                                     key={match.ID}
                                     match={match}
@@ -59,11 +59,11 @@ const HomePage = () => {
 
                 <div className="direct-elimination-game-container-semi-finals">
                     <h3>Semi-finals</h3>
-                    {semiFinals.map(match => {
+                    {semiFinals.map((match, index) => {
                         const teamA = teams.find(team => team.ID === match.ATeamID);
                         const teamB = teams.find(team => team.ID === match.BTeamID);
                         return (
-                            <div className="match-wrapper" key={match.ID}>
+                            <div className={`match-wrapper-semi-${index+1}`} key={match.ID}>
                                 <MatchItem
                                     key={match.ID}
                                     match={match}
@@ -80,7 +80,7 @@ const HomePage = () => {
                 <div className="direct-elimination-game-container-final">
                     <h3>Final</h3>
                     {final && (
-                        <div className="match-wrapper" key={final.ID}>
+                        <div className="match-wrapper-final" key={final.ID}>
                             <MatchItem
                                 match={final}
                                 teamA={teams.find(team => team.ID === final.ATeamID)}

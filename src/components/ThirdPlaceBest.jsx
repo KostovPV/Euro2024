@@ -16,6 +16,8 @@ const ThirdPlaceBest = ({ allThirdPlaceTeams }) => {
   // others to be marked in the css so not-qualified will be obvious
 
   return (
+    <>
+    <section  className="group-stage-section">
     <div className="group-stage-standings best-third-placed">
       <h4>Best Four Third-Placed Teams</h4>
       <div className="standings-header">
@@ -37,6 +39,8 @@ const ThirdPlaceBest = ({ allThirdPlaceTeams }) => {
         </div>
       ))}
     </div>
+    </section>
+    </>
   );
 };
 

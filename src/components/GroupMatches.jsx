@@ -1,4 +1,4 @@
-import MatchItem from './MatchItem';  // Import the new MatchItem component
+import MatchItem from './MatchItem';  
 
 const GroupMatches = ({ group, matches, teams }) => {
   if (!matches || !teams) {

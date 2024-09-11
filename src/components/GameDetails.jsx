@@ -149,46 +149,54 @@ const GameDetails = () => {
             <div className="formation-container">
                 <div className="formation-container-host">
                     <h3>{teamA?.Name} Formation</h3>
-                    <div onClick={() => handleTeamClick(teamA)}>
-                        <div className="image-container" style={{ height: 200, width: 200 }}>
-                            <img src="/assets/images/442-jpg.webp" alt={`${teamA?.Name} Formation`} style={{ width: '100%', height: '100%' }} />
+                    <div className="formation-container-host-info">
+                        <div onClick={() => handleTeamClick(teamA)}>
+                            <div className="formation-image-container" >
+                                <img src="/assets/images/442-jpg.webp" alt={`${teamA?.Name} Formation`} style={{ width: '100%', height: '100%' }} />
+                            </div>
                         </div>
-                    </div>
-                    {showTeamA && (
-                <div>
-                    <div className="host-team-list">
-                        <TeamDetails
-                            team={teamA}
-                            matchID={match.ID}
-                        />
-                        <button onClick={() => handleBack(teamA.ID)} className="btn">Back</button>
-                    </div>
+                        {showTeamA && (
+                            <div>
+                                <div className="host-team-list">
+                                    <TeamDetails
+                                        team={teamA}
+                                        matchID={match.ID}
+                                    />
+                                    <button onClick={() => handleBack(teamA.ID)} className="btn">Back</button>
+                                </div>
 
-                </div>
-            )}
+                            </div>
+                        )}
+                    </div>
                 </div>
                 <div className="formation-container-visitor">
                     <h3>{teamB?.Name} Formation</h3>
-                    <div onClick={() => handleTeamClick(teamB)}>
-                        <div className="image-container" style={{ height: 200, width: 200 }}>
-                            <img src="/assets/images/442-jpg.webp" alt={`${teamB?.Name} Formation`} style={{ width: '100%', height: '100%' }} />
+                    <div className="formation-container-visitor-info">
+
+                        <div onClick={() => handleTeamClick(teamB)}>
+                            <div className="formation-image-container" >
+                                <img src="/assets/images/442-jpg.webp" alt={`${teamB?.Name} Formation`} style={{ width: '100%', height: '100%' }} />
+                            </div>
                         </div>
-                    </div>
-                    {showTeamB && (
-                <div>
-                    <div className="visitors-team-list">
-                        <TeamDetails
-                            team={teamB}
-                            matchID={match.ID}
-                        />
-                        <button onClick={() => handleBack(teamB.ID)} className="btn">Back</button>
+                        {showTeamB && (
+                            <div>
+                                <div className="visitor-team-list">
+                                    <TeamDetails
+                                        team={teamB}
+                                        matchID={match.ID}
+                                    />
+                                    <button onClick={() => handleBack(teamB.ID)} className="btn">Back</button>
+                                </div>
+
+
+                            </div>
+                        )}
+
                     </div>
 
 
                 </div>
-            )}
-                </div>
-            </div>          
+            </div>
         </section>
     );
 };

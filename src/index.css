@@ -62,7 +62,7 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  
+
 }
 
 nav {
@@ -111,7 +111,7 @@ nav {
   border-radius: 5px;
   cursor: pointer;
   background-color: #c6d1dd;
-  
+
 }
 
 .btn.active {
@@ -123,6 +123,28 @@ nav {
   background-color: #969ca6;
 }
 
+.match {
+  background-color: #f9f9f9;
+  /* border-left: 6px solid #2fd51a; */
+  /*--------- decide dorder for full game or line --------*/
+  border: 2px solid #969ca6;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+  flex: 0 0 32%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+
+  max-height: 8rem;
+
+}
+
+ /*--------- Group stage  --------*/
 .group-stage {
   display: flex;
   flex-direction: column;
@@ -133,7 +155,7 @@ nav {
 
 .group-stage h4 {
   margin-bottom: 1rem;
-  
+
 }
 
 .group-stage-matches-container {
@@ -158,9 +180,9 @@ nav {
   border-radius: 10px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
   align-items: flex-start;
- 
-}
 
+}
+/*--------- Group stage stangins section --------*/
 .group-stage-standings {
   width: 30%;
   display: flex;
@@ -177,7 +199,7 @@ nav {
   justify-content: space-between;
   padding: 0.5rem;
   background-color: #f0f0f0;
-  
+
   text-align: center;
   margin-bottom: 0.5rem;
 }
@@ -200,19 +222,19 @@ nav {
 .standings-header div:first-child,
 .standings-row div:first-child {
   flex: 4;
- 
+
   text-align: left;
 }
 
 .standings-header div:nth-child(n+2),
 .standings-row div:nth-child(n+2) {
   flex: 1;
- 
+
 }
 
 .standings-row {
   background-color: #f9f9f9;
-  
+
   border-bottom: 1px solid #ccc;
 }
 
@@ -223,54 +245,40 @@ h3 {
   border-radius: 4px;
   margin-bottom: 1rem;
 }
-
+/*--------- Group stage games section --------*/
 .group-stage-matches {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  
+
 }
 
 .match-container {
   width: 33%;
   display: flex;
 }
-.match-container .match{
+
+.match-container .match {
   width: 100%;
 }
-.match {
-  background-color: #f9f9f9;
-  border-left: 6px solid #2fd51a;
-  /*--------- decide dorder for full game or line --------*/
-  padding: 1rem;
-  /* border-radius: 8px; */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-  flex: 0 0 32%;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 1.5rem;
- 
-  max-height: 8rem;
 
-}
 
+/*--------- Third place standing column --------*/
 .best-third-placed {
+  margin-left:0 auto;
   width: 30%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center; 
   justify-content: flex-start;
-  margin-right: 2rem;
+  /* margin-right: 2rem; */
   padding: 1rem;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  min-width: 22rem;
 }
 
 .best-third-placed h4 {
@@ -313,6 +321,219 @@ h3 {
   text-align: left;
 }
 
+@media (max-width: 850px) {
+
+  /* Stack group standings on top of games */
+  .group-stage-section {
+    flex-direction: column;
+    align-items: center;
+    /* min-width: 35rem; */
+  }
+
+  /* Ensure both group standings and matches take full width */
+  .group-stage-standings,
+  .group-stage-matches-container {
+    width: 90%;
+  }
+
+  /* Ensure each match container also takes full width */
+  .match-container {
+    width: 100%;
+  }
+
+  /* Adjust match items to take the full width */
+  .match {
+    width: 100%;
+  }
+
+  /* Optional: Adjust padding and margins for better responsiveness */
+  .group-stage-section {
+    padding: 1rem 0;
+  }
+
+  .match {
+    margin-bottom: 1rem;
+  }
+}
+
+
+
+
+/* ----------Kick of stage(Home Page)------------ */
+
+.elimination-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+
+  padding: 1rem;
+padding-left: 2rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  align-items: flex-start;
+}
+
+.elimination-container>section {
+  padding: 0;
+}
+
+.direct-elimination-game {
+  width: 25%;
+  margin-right: 3rem;
+  background-color: transparent;
+}
+
+.direct-elimination-game h3 {
+  text-align: center;
+}
+
+.direct-elimination-game-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.match-wrapper-16-1,
+.match-wrapper-16-3,
+.match-wrapper-16-5,
+.match-wrapper-16-7 {
+  position: relative; 
+}
+
+.match-wrapper-16-1::after,
+.match-wrapper-16-3::after,
+.match-wrapper-16-5::after,
+.match-wrapper-16-7::after {
+  content: "";
+  position: absolute;
+  right: 0px; 
+  top: 70%; 
+  width: 0; 
+  height: 4rem; 
+  border-left: 2px dashed #969ca6; 
+}
+
+.match-wrapper-1 {
+  margin-top: 4.4rem;
+  position: relative; 
+}
+.match-wrapper-1::after,
+.match-wrapper-3::after {
+  content: "";
+  position: absolute;
+  right: 0px; 
+  top: 70%; 
+  width: 0; 
+  height: 14rem; 
+  border-left: 2px dashed #969ca6; 
+}
+
+.match-wrapper-1::before,
+.match-wrapper-2::before,
+.match-wrapper-3::before,
+.match-wrapper-4::before {
+  content: "";
+  position: absolute;
+  left: -3rem; 
+  top: 45%; 
+  transform: translateY(-50%); 
+  width: 3rem; 
+  height: 2px; 
+  border-top: 2px dashed #969ca6; 
+  
+}
+.match-wrapper-2 {
+  margin-top: 10rem;
+  position: relative;
+}
+
+.match-wrapper-3 {
+  margin-top: 10.2rem;
+  position: relative;
+}
+
+.match-wrapper-4 {
+  margin-top: 9.8rem;
+  position: relative;
+}
+.match-wrapper-semi-1 {
+  margin-top: 14rem;
+  position: relative;
+}
+
+.match-wrapper-semi-2 {
+  margin-top: 28.5rem;
+  position: relative;
+}
+.match-wrapper-semi-1::before,
+.match-wrapper-semi-2::before {
+  content: "";
+  position: absolute;
+  left: -3rem; 
+  top: 45%; 
+  transform: translateY(-50%); /* Centers the line vertically */
+  width: 3rem; 
+  height: 2px; 
+  border-top: 2px dashed #969ca6; 
+  
+}
+.match-wrapper-semi-1::after {
+  content: "";
+  position: absolute;
+  right: 0px; 
+  top: 70%; 
+  width: 0; 
+  height: 38rem; 
+  border-left: 2px dashed #969ca6; /
+  
+}
+
+.match-wrapper-final {
+  margin-top: 33rem;
+  position: relative;
+}
+.match-wrapper-final::before {
+  content: "";
+  position: absolute;
+  left: -3rem; 
+  top: 45%; 
+  transform: translateY(-50%); 
+  width: 3rem; 
+  height: 2px; 
+  border-top: 2px dashed #969ca6; 
+  
+}
+.direct-elimination-game-container-quarter-finals,
+.direct-elimination-game-container-round-of-16,
+.direct-elimination-game-container-semi-finals,
+.direct-elimination-game-container-final {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  
+}
+
+/*----------------  remove match wraper in fix the css  ----------------*/
+
+
+.match-box {
+  width: 100%;
+  display: flex;
+}
+
+/* .match-wrapper {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+} */
+
+
+/* ---------------------- Game details----------------------- */
 .matches-image-container {
   display: flex;
   margin: 0.5rem;
@@ -325,109 +546,67 @@ h3 {
   padding: 0.1rem;
   margin: 0.3rem;
 }
-
-.elimination-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
- 
-  padding: 1rem;
-
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  align-items: center;
-}
-.direct-elimination-game{
-  background-color: transparent;
-}
-.direct-elimination-game h3{
-  text-align: center;
-}
-
- .direct-elimination-game-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-
-.direct-elimination-game-container-quarter-finals {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  position: relative; 
-}
-/*----------------  remove match wraper in fix the css  ----------------*/
-.match-wrapper {
-  padding: 1.5rem;
-  position: relative; 
-}
-
-
-.match-wrapper::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 12px; 
-  background-color: #333; 
-  z-index: -1;
-}
-.direct-elimination-game-container-quarter-finals > .match-wrapper:nth-child(1)::before {
-  margin-bottom: 8rem; 
-}
-
-.direct-elimination-game-container-quarter-finals > .match-wrapper:nth-child(2)::before {
-  margin-bottom: 5rem;
-  margin-top: 4rem;
-}
-
-.direct-elimination-game-container-quarter-finals > .match-wrapper:nth-child(3)::before {
-  margin-bottom: 4rem;
-  margin-top: 6rem;
-}
-
-.direct-elimination-game-container-quarter-finals > .match-wrapper:nth-child(4)::before {
-  margin-bottom: 1rem;
-  margin-top: 7rem;
-}
-/* ---------------------- Game details----------------------- */
-.game-details{
+.game-details {
   flex-direction: column;
 }
 
 .game-details-head {
   width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
+
 .game-details-head-info h2,
 .game-details-head-info p,
-.game-details-head-info div{
+.game-details-head-info div {
   text-align: center;
 }
 
-.formation-container{
+.formation-container {
   margin-top: 2rem;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+.formation-container h3{
+  text-align:center ;
 }
 .formation-container-host,
 .formation-container-visitor {
+  width: 48%;
   display: flex;
   flex-direction: column;
 
 }
+.formation-container-host-info,
+.formation-container-visitor-info{
+  width: 100%;
+  display: flex;
+}
+.formation-image-container {
+  display: flex;
+  /* margin-top: 3rem; */
+  /* width: 47%; */
+  height: 18rem;
+  border-radius: 6px;
+  overflow: hidden; 
+}
+.host-team-list,
+.visitor-team-list{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 1rem;
+}
+
+/* .formation-image-container img {
+  object-fit: contain; 
+} */
+
 
 /*--------------------------Player details still not added      ----------*/
 
