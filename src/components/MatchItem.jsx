@@ -19,7 +19,7 @@ const MatchItem = ({ match, teamA, teamB }) => {
             <img src={`/assets/images/${teamB.Name}.svg`} alt="" />
           </div>
         </div>
-        <p>Date: {match.Date}</p>
+        <p className='game-date'>Date: {match.Date}</p>
         {/* <p>Score: {match.Score}</p> */}
       </div>
     // </div>

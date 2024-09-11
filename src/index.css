@@ -4,6 +4,7 @@
   border: 0;
   outline: 0;
   box-sizing: border-box;
+  font-family: "ReithSans", "Helvetica";
 }
 
 img {
@@ -96,7 +97,7 @@ nav {
   margin-bottom: 0;
 }
 
-.btn {
+/* .btn {
   white-space: nowrap;
   overflow: hidden;
   color: inherit;
@@ -111,17 +112,68 @@ nav {
   border-radius: 5px;
   cursor: pointer;
   background-color: #c6d1dd;
-
 }
+
 
 .btn.active {
   background-color: #6b7783;
   color: white;
+  cursor: default; 
 }
 
-.btn:not(:disabled):hover {
-  background-color: #969ca6;
+
+.btn.active:hover {
+  background-color: #6b7783; 
+  color: white;
 }
+
+
+.btn:not(.active):hover {
+  background-color: #969ca6;
+} */
+
+.btn {
+  white-space: nowrap;
+  overflow: hidden;
+  color: inherit;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: 1rem;
+  margin-bottom: 0;
+  border: none;
+  cursor: pointer;
+  background-color: #DBDBDB;
+  border-radius: 0;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.btn.active {
+  background-color: #F6F6F6;
+  cursor: default;
+}
+
+.btn.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: orange;
+  border-radius: 0;
+}
+
+.btn:not(.active):hover {
+  text-decoration: underline;
+  text-decoration-color: rgb(17, 16, 16);
+  text-decoration-thickness: 1px;
+  cursor: pointer;
+}
+
 
 .match {
   background-color: #f9f9f9;
@@ -144,7 +196,7 @@ nav {
 
 }
 
- /*--------- Group stage  --------*/
+/*--------- Group stage  --------*/
 .group-stage {
   display: flex;
   flex-direction: column;
@@ -182,6 +234,7 @@ nav {
   align-items: flex-start;
 
 }
+
 /*--------- Group stage stangins section --------*/
 .group-stage-standings {
   width: 30%;
@@ -245,6 +298,7 @@ h3 {
   border-radius: 4px;
   margin-bottom: 1rem;
 }
+
 /*--------- Group stage games section --------*/
 .group-stage-matches {
   width: 100%;
@@ -267,11 +321,11 @@ h3 {
 
 /*--------- Third place standing column --------*/
 .best-third-placed {
-  margin-left:0 auto;
+  margin-left: 0 auto;
   width: 30%;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   justify-content: flex-start;
   /* margin-right: 2rem; */
   padding: 1rem;
@@ -321,32 +375,27 @@ h3 {
   text-align: left;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
 
-  /* Stack group standings on top of games */
   .group-stage-section {
     flex-direction: column;
     align-items: center;
     /* min-width: 35rem; */
   }
 
-  /* Ensure both group standings and matches take full width */
   .group-stage-standings,
   .group-stage-matches-container {
     width: 90%;
   }
 
-  /* Ensure each match container also takes full width */
   .match-container {
     width: 100%;
   }
 
-  /* Adjust match items to take the full width */
   .match {
     width: 100%;
   }
 
-  /* Optional: Adjust padding and margins for better responsiveness */
   .group-stage-section {
     padding: 1rem 0;
   }
@@ -368,7 +417,7 @@ h3 {
   width: 100%;
 
   padding: 1rem;
-padding-left: 2rem;
+  padding-left: 2rem;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
@@ -401,7 +450,7 @@ padding-left: 2rem;
 .match-wrapper-16-3,
 .match-wrapper-16-5,
 .match-wrapper-16-7 {
-  position: relative; 
+  position: relative;
 }
 
 .match-wrapper-16-1::after,
@@ -410,26 +459,23 @@ padding-left: 2rem;
 .match-wrapper-16-7::after {
   content: "";
   position: absolute;
-  right: 0px; 
-  top: 70%; 
-  width: 0; 
-  height: 4rem; 
-  border-left: 2px dashed #969ca6; 
+  right: 0px;
+  top: 70%;
+  width: 0;
+  height: 4rem;
+  border-left: 2px dashed #969ca6;
 }
 
-.match-wrapper-1 {
-  margin-top: 4.4rem;
-  position: relative; 
-}
+
 .match-wrapper-1::after,
 .match-wrapper-3::after {
   content: "";
   position: absolute;
-  right: 0px; 
-  top: 70%; 
-  width: 0; 
-  height: 14rem; 
-  border-left: 2px dashed #969ca6; 
+  right: 0px;
+  top: 70%;
+  width: 0;
+  height: 14rem;
+  border-left: 2px dashed #969ca6;
 }
 
 .match-wrapper-1::before,
@@ -438,14 +484,20 @@ padding-left: 2rem;
 .match-wrapper-4::before {
   content: "";
   position: absolute;
-  left: -3rem; 
-  top: 45%; 
-  transform: translateY(-50%); 
-  width: 3rem; 
-  height: 2px; 
-  border-top: 2px dashed #969ca6; 
-  
+  left: -3rem;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 2px;
+  border-top: 2px dashed #969ca6;
+
 }
+
+.match-wrapper-1 {
+  margin-top: 4.4rem;
+  position: relative;
+}
+
 .match-wrapper-2 {
   margin-top: 10rem;
   position: relative;
@@ -460,6 +512,7 @@ padding-left: 2rem;
   margin-top: 9.8rem;
   position: relative;
 }
+
 .match-wrapper-semi-1 {
   margin-top: 14rem;
   position: relative;
@@ -469,44 +522,46 @@ padding-left: 2rem;
   margin-top: 28.5rem;
   position: relative;
 }
+
 .match-wrapper-semi-1::before,
 .match-wrapper-semi-2::before {
   content: "";
   position: absolute;
-  left: -3rem; 
-  top: 45%; 
-  transform: translateY(-50%); /* Centers the line vertically */
-  width: 3rem; 
-  height: 2px; 
-  border-top: 2px dashed #969ca6; 
-  
+  left: -3rem;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 2px;
+  border-top: 2px dashed #969ca6;
+
 }
+
 .match-wrapper-semi-1::after {
   content: "";
   position: absolute;
-  right: 0px; 
-  top: 70%; 
-  width: 0; 
-  height: 38rem; 
-  border-left: 2px dashed #969ca6; /
-  
+  right: 0px;
+  top: 70%;
+  width: 0;
+  height: 38rem;
+  border-left: 2px dashed #969ca6;/
 }
 
 .match-wrapper-final {
-  margin-top: 33rem;
+  margin-top: 32rem;
   position: relative;
 }
+
 .match-wrapper-final::before {
   content: "";
   position: absolute;
-  left: -3rem; 
-  top: 45%; 
-  transform: translateY(-50%); 
-  width: 3rem; 
-  height: 2px; 
-  border-top: 2px dashed #969ca6; 
-  
+  left: -3.0rem;
+  top: 41%;
+  width: 2.9rem;
+  height: 4px;
+  border-top: 2px dashed #969ca6;
+
 }
+
 .direct-elimination-game-container-quarter-finals,
 .direct-elimination-game-container-round-of-16,
 .direct-elimination-game-container-semi-finals,
@@ -515,10 +570,126 @@ padding-left: 2rem;
   flex-direction: column;
   width: 100%;
   height: 100%;
-  
+
 }
 
-/*----------------  remove match wraper in fix the css  ----------------*/
+@media (max-width: 900px) {
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  .elimination-container {
+    width: 700px;
+    margin: 0 auto;
+    /* This will center the container horizontally */
+    justify-content: center;
+    /* min-width: 35rem; */
+  }
+
+  .direct-elimination-game {
+    margin-right: 2.7rem;
+  }
+
+  .match {
+    width: 6.8rem;
+    padding: 0.5rem;
+    min-height: 8rem;
+  }
+
+  .direct-elimination-game .match .game-date {
+    display: none;
+  }
+
+  .match-wrapper-16-1::after,
+  .match-wrapper-16-3::after,
+  .match-wrapper-16-5::after,
+  .match-wrapper-16-7::after {
+    right: 9px;
+    top: 70%;
+    width: 2px;
+    height: 4rem;
+    border-left: 2px dashed #969ca6;
+  }
+
+  .match-wrapper-1::before,
+  .match-wrapper-2::before,
+  .match-wrapper-3::before,
+  .match-wrapper-4::before {
+    left: -3.3rem;
+    width: 3.1rem;
+    height: 2px;
+  }
+
+  .match-wrapper-1 {
+    margin-top: 3.1rem;
+
+  }
+
+  .match-wrapper-2 {
+    margin-top: 9rem;
+  }
+
+  .match-wrapper-3 {
+    margin-top: 9rem;
+  }
+
+  .match-wrapper-4 {
+    margin-top: 9rem;
+  }
+
+  .match-wrapper-1::after,
+  .match-wrapper-3::after {
+    right: 11px;
+    top: 70%;
+    width: 2;
+    height: 14rem;
+    border-left: 2px dashed #969ca6;
+  }
+
+  .match-wrapper-semi-1 {
+    margin-top: 13.4rem;
+  }
+
+  .match-wrapper-semi-2 {
+    margin-top: 26.9rem;
+  }
+
+  .match-wrapper-semi-1::before,
+  .match-wrapper-semi-2::before {
+
+    left: -3.3rem;
+    top: 45%;
+    width: 3.2rem;
+    height: 2px;
+    border-top: 2px dashed #969ca6;
+
+  }
+
+  .match-wrapper-semi-1::after {
+    right: 11px;
+    top: 5%;
+    width: 0;
+    height: 38rem;
+  }
+
+  .match-wrapper-final {
+    margin-top: 32rem;
+  }
+
+  .match-wrapper-final::before {
+    content: "";
+    position: absolute;
+    left: -3.3rem;
+    top: 45%;
+    width: 3.1rem;
+    height: 2px;
+
+
+  }
+}
+
+
+
 
 
 .match-box {
@@ -546,6 +717,7 @@ padding-left: 2rem;
   padding: 0.1rem;
   margin: 0.3rem;
 }
+
 .game-details {
   flex-direction: column;
 }
@@ -572,9 +744,11 @@ padding-left: 2rem;
   display: flex;
   justify-content: space-between;
 }
-.formation-container h3{
-  text-align:center ;
+
+.formation-container h3 {
+  text-align: center;
 }
+
 .formation-container-host,
 .formation-container-visitor {
   width: 48%;
@@ -582,32 +756,144 @@ padding-left: 2rem;
   flex-direction: column;
 
 }
+
 .formation-container-host-info,
-.formation-container-visitor-info{
+.formation-container-visitor-info {
   width: 100%;
   display: flex;
 }
+
 .formation-image-container {
   display: flex;
   /* margin-top: 3rem; */
   /* width: 47%; */
   height: 18rem;
   border-radius: 6px;
-  overflow: hidden; 
+  overflow: hidden;
 }
+
 .host-team-list,
-.visitor-team-list{
+.visitor-team-list {
   display: flex;
   flex-direction: column;
   width: 100%;
   padding-left: 1rem;
 }
 
-/* .formation-image-container img {
-  object-fit: contain; 
-} */
+.team-details-title {
+  text-align: center;
+}
+
+.team-list-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+.players-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.team-list-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.team-list-header>div {
+  flex: 1;
+}
+
+.team-number,
+.player-details-number {
+  text-align: left;
+  flex: 1;
+}
+
+.player-name,
+.player-details-name {
+  text-align: left;
+  padding-left: 1rem;
+  flex: 2;
+}
+
+.player-position,
+.player-details-position {
+  text-align: center;
+  flex: 1;
+}
+
+.player-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.player-item:hover {
+  background-color: #f9f9f9;
+}
+
+.player-details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 
 
-/*--------------------------Player details still not added      ----------*/
+@media (max-width: 1100px) {
+  .formation-image-container {
+    width: 10rem;
+    height: 9rem;
+  }
 
-/*------------Media queries to add--------------------*/
+  .visitor-team-list {
+    width: 80%;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .formation-container-host-info,
+  .formation-container-visitor-info {
+
+    flex-direction: column;
+    
+  }
+  .formation-image-container {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+}
+
+/*------------------ Player details ----------------------------*/
+
+.player-details-box {
+  margin: 0 auto;
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+.player-details-box p{
+  margin-top: 0.5rem;
+}
+.player-details-box h2{
+  margin: 1rem;
+}
+
+.player-details-box .btn{
+  margin-top: 1rem;
+}

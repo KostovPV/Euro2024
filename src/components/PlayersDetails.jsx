@@ -16,9 +16,6 @@ const PlayerDetails = () => {
     const playerInfo = records
         ?.filter(record => record.PlayerID === player?.ID && record.MatchID === matchID)
         ?.shift();
-
-    
-
     const handleBackClick = () => {
         navigate(-1);
     };
@@ -33,13 +30,14 @@ const PlayerDetails = () => {
     };
 
     return (
-        <div className="player-details">
-            <button onClick={handleBackClick} className="back-button">Back</button>
+        <div className="player-details-box">
+           
             <h2>Player Details</h2>
             <p><strong>Name:</strong> {player?.FullName}</p>
             <p><strong>Number:</strong> {player?.TeamNumber}</p>
             <p><strong>Position:</strong> {player?.Position}</p>
             <p><strong>Minutes Played:</strong> {calculateMinutesPlayed(playerInfo)}</p>
+            <button onClick={handleBackClick} className="btn">Back</button>
         </div>
     );
 };

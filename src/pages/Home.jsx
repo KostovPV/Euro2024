@@ -38,7 +38,7 @@ const HomePage = () => {
 
 
                 <div className="direct-elimination-game-container-quarter-finals">
-                    <h3>Quarter-finals</h3>
+                    <h3>1/4 - finals</h3>
                     {quarterFinals.map((match, index) => {
                         const teamA = teams.find(team => team.ID === match.ATeamID);
                         const teamB = teams.find(team => team.ID === match.BTeamID);

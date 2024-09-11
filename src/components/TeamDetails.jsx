@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { DataContext } from '../context/DataContext';
 
 const TeamDetails = ({ team, matchID }) => {
-  
+
   const navigate = useNavigate();
   const data = useContext(DataContext);
 
@@ -14,15 +14,37 @@ const TeamDetails = ({ team, matchID }) => {
 
   return (
     <div className="team-details">
-      <h2>{team?.Name} Players</h2>
+      {/* <h2 className='team-details-title'> Players</h2> */}
       <ul className="players-list">
+        <div className="team-list-header">
+          <div className="team-number">
+            Num
+          </div>
+          <div className="player-name">
+            Player
+          </div>
+          <div className="player-position">
+            Pos
+          </div>
+        </div>
         {players?.map((player) => (
           <li
             key={player.ID}
             onClick={() => handlePlayerClick(player)}
             className="player-item"
           >
-            <p>{player.TeamNumber}. {player.FullName} - {player.Position}</p>
+            <div className="player-details">
+              <div className="player-details-number">
+                {player.TeamNumber}.
+              </div>
+              <div className="player-details-name">
+                {player.FullName}
+              </div>
+              <div className="player-details-position">
+                {player.Position}
+              </div>
+            </div>
+            <p>  </p>
           </li>
         ))}
       </ul>
