@@ -89,7 +89,6 @@ const GameDetails = () => {
                 <div className="formation-container-visitor">
                     <h3>{teamB?.Name} Formation</h3>
                     <div className="formation-container-visitor-info">
-
                         <div onClick={() => handleTeamClick(teamB)}>
                             <div className="formation-image-container" >
                                 <img src="/assets/images/442-jpg.webp" alt={`${teamB?.Name} Formation`} style={{ width: '100%', height: '100%' }} />

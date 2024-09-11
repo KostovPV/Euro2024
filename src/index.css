@@ -697,12 +697,6 @@ h3 {
   display: flex;
 }
 
-/* .match-wrapper {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-} */
-
 
 /* ---------------------- Game details----------------------- */
 .matches-image-container {
@@ -765,8 +759,6 @@ h3 {
 
 .formation-image-container {
   display: flex;
-  /* margin-top: 3rem; */
-  /* width: 47%; */
   height: 18rem;
   border-radius: 6px;
   overflow: hidden;
