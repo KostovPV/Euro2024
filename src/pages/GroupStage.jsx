@@ -35,17 +35,20 @@ const GroupStage = () => {
 
 
     return (
-        <>
-        <div className="group-stage">
-            {groupStandings.map(({ groupName, standings, groupTeams, groupMatches }, index) => (
-                <section key={index} className="group-stage-section">
-                    <GroupStandings standings={standings} groupName={groupName} />
-                    <GroupMatches group={groupName} matches={groupMatches} teams={groupTeams} />
-                </section>
-            ))}
-            <ThirdPlaceBest allThirdPlaceTeams={allThirdPlaceTeams} />
+
+        <div className="group-stage-wrapper">
+            <div className="group-stage">
+                {groupStandings.map(({ groupName, standings, groupTeams, groupMatches }, index) => (
+                    <section key={index} className="group-stage-section">
+                        <GroupStandings standings={standings} groupName={groupName} />
+                        <GroupMatches group={groupName} matches={groupMatches} teams={groupTeams} />
+                    </section>
+                ))}
+                <ThirdPlaceBest allThirdPlaceTeams={allThirdPlaceTeams} />
+            </div>
+
         </div>
-        </>
+
     );
 };
 export default GroupStage;

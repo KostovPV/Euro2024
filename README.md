@@ -1,23 +1,27 @@
 # React + Vite
 # Sirma academy final task
 
-Coffee Land is a web application built using Express.js and Handlebars.js. It provides a platform to browse coffee places in your town, view details about each place, and add new coffee places to the list.
-The project is deployed at:
-https://secure-wildwood-01484-63b0844f3c37.herokuapp.com/
+Euro2024 is a project where a valid data from CSV files (4 files) has to be parsed (no additional libraries are allowed) and displayed to users, showing the championship games from the beginning to the final. Additional information about the games, teams, and players who participated in the championship (and their corresponding games) must be displayed where appropriate, to achieve a good user experience (UX)
+
+
 
 # Main Page
-![Coffe Land 1](https://github.com/user-attachments/assets/25c3e0d8-5522-440a-beac-8c23a34596cc)
+#The Elimination rounds representing the road to the final game
+![Home Page](HomePage.png)
 
-#List Page
-![Coffe Land 2](https://github.com/user-attachments/assets/153f0725-be7a-43ce-a7a8-b16f05bcdc0f)
+# Group page
+ #Representing the group standing after the group games completition and displays all group games
+![Proup Stage Page](GroupStage.png)
 
 ## Features
 
-- **Browse Coffee Places**: View a list of coffee places in your town.
-- **View Details**: Click on any coffee place to view detailed information, including ratings and descriptions.
-- **Add New Place**: Use a form to add a new coffee place to the list.
-- **Responsive Design**: The application is responsive and works well on both desktop and mobile devices.
-- **Dynamic Ratings**: Display ratings with star icons using FontAwesome.
+- **View Game Details**: Click on any game and aditional info will be displayed
+- **View Team Detaisl**: Click on any team and aditional info will be displayed
+![Teams Info](TeamsInfo.png)
+- **View Player Detaisl**: Click on any team plaeyer and aditional info will be displayed for the player in this specific game.
+![Players info](PlayersInfo.png)
+- **Responsive Design**: The application is responsive and should works well on both desktop and mobile devices
+
 
 ## Installation
 
@@ -26,9 +30,4 @@ npm install
 
 1. ** Running the Project
 npm run dev
-
-Usage
-- Home Page: Navigate to / to view the home page with an overview of the coffee places.
-- List Page: Go to /list to see a detailed list of coffee places in your town.
-- Details Page: Access /list/:id to view details about a specific coffee place.
 

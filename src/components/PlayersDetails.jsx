@@ -19,6 +19,7 @@ const PlayerDetails = () => {
     const handleBackClick = () => {
         navigate(-1);
     };
+    console.log('playerInfo->', playerInfo);
 
     const calculateMinutesPlayed = (info) => {
         if (!info) return "Didn't play in this game";
